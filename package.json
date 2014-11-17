@@ -1,0 +1,28 @@
+{
+  "name": "tessel-xmas-lights",
+  "version": "0.1.0",
+  "description": "Control Xmas lights (Neopixels) on Tessel with REST",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dermike/tessel-xmas-lights.git"
+  },
+  "keywords": [
+    "xmas",
+    "lights",
+    "tessel"
+  ],
+  "author": "Mikael Jergefelt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dermike/tessel-xmas-lights/issues"
+  },
+  "homepage": "https://github.com/dermike/tessel-xmas-lights",
+  "dependencies": {
+    "npx": "^0.1.3"
+  }
+}
