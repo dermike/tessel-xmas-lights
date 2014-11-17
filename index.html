@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad-retina.png">
+    <link rel="shortcut icon" href="icons/favicon.png">
+    <title>Tessel Xmas!</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script>
+    function setColor(color) {
+      $('#status').html('Sending ' + color + '...');
+      $.ajax({
+        url: 'http://pi.redvolu.me:31024/' + color,
+        jsonpCallback: 'gotdata',
+        dataType: 'jsonp',
+        success: function(data) {
+          var response = JSON.parse(data);
+          $('#status').html(response.color + ' set successfully!');
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('#status').html('error ' + textStatus + ' ' + errorThrown);
+        }
+      });
+    }
+    </script>
+  </head>
+  <body>
+
+    <div id="yo" class="vertical-center">
+      <div id="status"></div>
+      <button class="button expand" style="background-color: red;" onclick="setColor('red');">R&ouml;d</button>
+      <button class="button expand" style="background-color: blue;" onclick="setColor('blue');">Bl&aring;</button>
+      <button class="button expand" style="background-color: green;" onclick="setColor('green');">Gr&ouml;n</button>
+      <button class="button expand" style="background-color: white; color: black;" onclick="setColor('white');">Vit</button>
+      <button class="button expand" style="background-color: yellow; color: black;" onclick="setColor('yellow');">Gul</button>
+      <button class="button expand" style="background-color: cyan; color: black;" onclick="setColor('cyan');">Cyan</button>
+      <button class="button expand" style="background-color: black; color: white" onclick="setColor('off');">Av</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </body>
+</html>
