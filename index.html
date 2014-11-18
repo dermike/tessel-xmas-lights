@@ -25,7 +25,14 @@
         },
         error: function(jqXHR, textStatus, errorThrown) {
           $('#status').html('error ' + textStatus + ' ' + errorThrown);
-        }
+        },
+        beforeSend: function() {
+          $('.button').attr('disabled', 'disabled');
+        },
+        complete: function() {
+          $('.button').removeAttr('disabled');
+        },
+        timeout: 5000
       });
     }
     </script>
