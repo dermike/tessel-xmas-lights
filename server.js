@@ -5,29 +5,7 @@ var wifi = require('wifi-cc3000'),
 
 function setColor(color) {
   var colorset = npx.newAnimation(1);
-  switch(color) {
-    case 'red':
-      colorset.setAll('#FF0000');
-      break;
-    case 'white':
-      colorset.setAll('#FFFFFF');
-      break;
-    case 'green':
-      colorset.setAll('#00FF00');
-      break;
-    case 'yellow':
-      colorset.setAll('#CCFF00');
-      break;
-    case 'blue':
-      colorset.setAll('#0000FF');
-      break;
-    case 'cyan':
-      colorset.setAll('#00CCFF');
-      break;
-    default:
-      colorset.setAll('#000000');
-      break;
-  }
+  colorset.setAll('#' +  color);
   npx.play(colorset);
 }
 
