@@ -16,7 +16,7 @@
     function setColor(color) {
       $('#status').html('Sending ' + color + '...');
       $.ajax({
-        url: 'http://pi.redvolu.me:31024/' + color,
+        url: 'http://83.226.177.231:31024/' + color,
         jsonpCallback: 'gotdata',
         dataType: 'jsonp',
         success: function(data) {
